@@ -12,12 +12,13 @@ import MaterialComponents.MaterialButtons
 //import MaterialConainerScheme
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var backgroundView: UIView!
     
     @IBOutlet weak var timeLabel: UILabel!
     var timer: Timer?
     var expanded = false
+    var menuIsShowing = false
     var themeArray = ["#000000", "#F4976C","#EAE7DC"]
     var fontColor = ["#ffffff", "B4DFE5", "E85A4F"]
     
@@ -26,8 +27,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.showButtons))
-        self.view.addGestureRecognizer(tapGesture)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            timeLabel.font = timeLabel.font.withSize(200)
+        }
 
         for i in 0..<themeArray.count
         {
@@ -38,15 +40,28 @@ class ViewController: UIViewController {
             self.view.addSubview(button)
         }
         
-        let button = addThemeButton()
+        
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.showButtons))
+        
+        self.view.addGestureRecognizer(tapGesture)
+        
+        var button = addThemeButton()
+        button.tag = 101
         self.view.addSubview(button)
         
-        
+//        view.isUserInteractionEnabled = true
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.updateTimeLabel), userInfo: nil, repeats: true)
     }
     
+
+    
     override func viewWillAppear(_ animated: Bool) {
         updateTimeLabel()
+        UIApplication.shared.isIdleTimerDisabled = true
+        
+        
+        
     }
 
     @objc func updateTimeLabel()
@@ -77,7 +92,7 @@ class ViewController: UIViewController {
         //        MDCFloatingActionButtonThemer.applyScheme(buttonScheme, to: button)
         button.setElevation(ShadowElevation(rawValue: 12), for: .highlighted)
         button.tintColor = UIColor.white
-        button.tag = 0
+        
         
         button.addTarget((Any).self, action: #selector(ViewController.expandButton), for: .touchUpInside)
         
@@ -96,7 +111,7 @@ class ViewController: UIViewController {
     
     @objc func expandButton(sender:UIButton)
     {
-        if(sender.tag == 0)
+        if(sender.tag == 101)
         {
             UIView.animate(withDuration: 0.5) {
                 sender.transform = sender.transform.rotated(by: CGFloat(Double.pi / 2))
@@ -153,6 +168,40 @@ class ViewController: UIViewController {
     
     @objc func showButtons()
     {
+        
+        
+        menuIsShowing ? revealMenu() : hideMenu()
+        
+        menuIsShowing = !menuIsShowing
+        closeMenu()
+    }
+    
+    func revealMenu()
+    {
+        
+        if let button = self.view.viewWithTag(101)
+        {
+            UIView.animate(withDuration: 0.5) {
+                button.transform = CGAffineTransform(translationX: 0, y: 0)
+
+                button.alpha = 1
+            }
+
+        }
+        
+
+    }
+    
+    func hideMenu()
+    {
+        if let button = self.view.viewWithTag(101)
+        {
+            UIView.animate(withDuration: 0.5) {
+                button.transform = CGAffineTransform(translationX: 0, y: CGFloat(-105))
+                button.alpha = 0
+            }
+            
+        }
         
     }
 
