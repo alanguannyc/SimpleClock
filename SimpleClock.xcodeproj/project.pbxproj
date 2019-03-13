@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50CD2EAF114D875632A6996F /* Pods_SimpleClock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8521EACF02C14651296C82 /* Pods_SimpleClock.framework */; };
 		E7B179AC2237F03000EDD1B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B179AB2237F03000EDD1B7 /* AppDelegate.swift */; };
 		E7B179AE2237F03000EDD1B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B179AD2237F03000EDD1B7 /* ViewController.swift */; };
 		E7B179B12237F03000EDD1B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B179AF2237F03000EDD1B7 /* Main.storyboard */; };
 		E7B179B32237F03100EDD1B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B179B22237F03100EDD1B7 /* Assets.xcassets */; };
 		E7B179B62237F03100EDD1B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B179B42237F03100EDD1B7 /* LaunchScreen.storyboard */; };
+		E7B179BE22381EB600EDD1B7 /* Hexcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B179BD22381EB600EDD1B7 /* Hexcolor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11B22A38EC8C0EE00FA2F94E /* Pods-SimpleClock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleClock.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleClock/Pods-SimpleClock.release.xcconfig"; sourceTree = "<group>"; };
+		8F8521EACF02C14651296C82 /* Pods_SimpleClock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleClock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B179A82237F03000EDD1B7 /* SimpleClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B179AB2237F03000EDD1B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7B179AD2237F03000EDD1B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		E7B179B22237F03100EDD1B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7B179B52237F03100EDD1B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7B179B72237F03100EDD1B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7B179BD22381EB600EDD1B7 /* Hexcolor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexcolor.swift; sourceTree = "<group>"; };
+		EF12868C8730D6104016B063 /* Pods-SimpleClock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleClock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleClock/Pods-SimpleClock.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50CD2EAF114D875632A6996F /* Pods_SimpleClock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C00B6216B52F1E958A01DA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF12868C8730D6104016B063 /* Pods-SimpleClock.debug.xcconfig */,
+				11B22A38EC8C0EE00FA2F94E /* Pods-SimpleClock.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		182D1C30638F51141E266345 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F8521EACF02C14651296C82 /* Pods_SimpleClock.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E7B1799F2237F03000EDD1B7 = {
 			isa = PBXGroup;
 			children = (
 				E7B179AA2237F03000EDD1B7 /* SimpleClock */,
 				E7B179A92237F03000EDD1B7 /* Products */,
+				0C00B6216B52F1E958A01DA9 /* Pods */,
+				182D1C30638F51141E266345 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +83,7 @@
 				E7B179AB2237F03000EDD1B7 /* AppDelegate.swift */,
 				E7B179AD2237F03000EDD1B7 /* ViewController.swift */,
 				E7B179AF2237F03000EDD1B7 /* Main.storyboard */,
+				E7B179BD22381EB600EDD1B7 /* Hexcolor.swift */,
 				E7B179B22237F03100EDD1B7 /* Assets.xcassets */,
 				E7B179B42237F03100EDD1B7 /* LaunchScreen.storyboard */,
 				E7B179B72237F03100EDD1B7 /* Info.plist */,
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7B179BA2237F03100EDD1B7 /* Build configuration list for PBXNativeTarget "SimpleClock" */;
 			buildPhases = (
+				725659BFE66E726F151016B2 /* [CP] Check Pods Manifest.lock */,
 				E7B179A42237F03000EDD1B7 /* Sources */,
 				E7B179A52237F03000EDD1B7 /* Frameworks */,
 				E7B179A62237F03000EDD1B7 /* Resources */,
+				8FC042D39A1F7AF0DF54E931 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +159,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		725659BFE66E726F151016B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleClock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FC042D39A1F7AF0DF54E931 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleClock/Pods-SimpleClock-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleClock/Pods-SimpleClock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E7B179A42237F03000EDD1B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -137,6 +209,7 @@
 			files = (
 				E7B179AE2237F03000EDD1B7 /* ViewController.swift in Sources */,
 				E7B179AC2237F03000EDD1B7 /* AppDelegate.swift in Sources */,
+				E7B179BE22381EB600EDD1B7 /* Hexcolor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +353,7 @@
 		};
 		E7B179BB2237F03100EDD1B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF12868C8730D6104016B063 /* Pods-SimpleClock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +372,7 @@
 		};
 		E7B179BC2237F03100EDD1B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11B22A38EC8C0EE00FA2F94E /* Pods-SimpleClock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
