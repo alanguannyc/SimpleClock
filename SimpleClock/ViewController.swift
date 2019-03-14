@@ -7,9 +7,9 @@
 //
 
 import UIKit
-//import MaterialComponents.MaterialButtons_ButtonThemer
+
 import MaterialComponents.MaterialButtons
-//import MaterialConainerScheme
+
 
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
@@ -21,11 +21,17 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var menuIsShowing = false
     var themeArray = ["#000000", "#F4976C","#EAE7DC"]
     var fontColor = ["#ffffff", "B4DFE5", "E85A4F"]
+    let defaults = UserDefaults.standard
+    var userThemeSelection = ["fontColor": 0, "backgroundColor" : 0]
     
+    override open var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        defaults.set(userThemeSelection, forKey: "userThemeSelection")
         
         if UIDevice.current.userInterfaceIdiom == .pad {
             timeLabel.font = timeLabel.font.withSize(200)
@@ -49,15 +55,16 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         var button = addThemeButton()
         button.tag = 101
         self.view.addSubview(button)
-        
+        updateThemeBySelection()
 //        view.isUserInteractionEnabled = true
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.updateTimeLabel), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(ViewController.updateTimeLabel), userInfo: nil, repeats: true)
     }
     
 
     
     override func viewWillAppear(_ animated: Bool) {
         updateTimeLabel()
+        
         UIApplication.shared.isIdleTimerDisabled = true
         
         
@@ -81,6 +88,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             timer.invalidate()
             
         }
+    }
+    
+    func updateThemeBySelection()
+    {
+        let fontcolor = fontColor[(defaults.object(forKey: "userThemeSelection")! as AnyObject) ["fontColor"] as! Int]
+        timeLabel.textColor = UIColor().HexToColor(hexString: fontcolor)
+        
+        let backgroundcolor = themeArray[(defaults.object(forKey: "userThemeSelection")! as AnyObject) ["backgroundColor"] as! Int]
+        backgroundView.backgroundColor = UIColor().HexToColor(hexString: backgroundcolor)
     }
     
     func addThemeButton()->(MDCFloatingButton)
@@ -158,6 +174,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @objc func updateThemeByButton(sender: UIButton)
     {
         updateTheme(fontColor: fontColor[sender.tag - 1], backgroundColor: themeArray[sender.tag - 1])
+        
     }
 
     func updateTheme(fontColor: String, backgroundColor: String)
